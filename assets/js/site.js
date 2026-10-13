@@ -17,6 +17,30 @@
   document.addEventListener('dragstart', function (e) { if (e.target.closest && e.target.closest(pictures)) e.preventDefault(); });
   $$('img').forEach(function (img) { img.draggable = false; });
 
+  /* ---- Page loader: shows long enough for the doodle to draw and its line to be read, then lifts once the page
+     has loaded (never later than 2.5s). Leaving for another page of the site only fades to ink; the next page draws. */
+  var ld = $('.ld');
+  if (ld) {
+    var ldDone = false;
+    var hideLd = function () { if (ldDone) return; ldDone = true; ld.classList.remove('ld--leave'); ld.classList.add('ld--done'); };
+    var ldReady = function () { setTimeout(hideLd, Math.max(0, (calm ? 0 : 1300) - performance.now())); };
+    if (document.readyState === 'complete') ldReady(); else window.addEventListener('load', ldReady);
+    setTimeout(hideLd, 2500);
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (calm || !a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      if (a.target === '_blank' || a.hasAttribute('download')) return;
+      var url = new URL(a.href, location.href);
+      if (url.origin !== location.origin || url.pathname === location.pathname) return;   // other sites, mail, same-page links
+      e.preventDefault();
+      ld.classList.remove('ld--done'); ld.classList.add('ld--leave');   // fade to ink; the next page draws its own doodle
+      ldDone = false;
+      setTimeout(function () { location.href = url.href; }, 260);
+    });
+    // Coming back with the browser's Back button can restore this page as it was left: lift the loader again
+    window.addEventListener('pageshow', function (e) { if (e.persisted) { ldDone = false; hideLd(); } });
+  }
+
   /* ---- Mobile menu */
   var menu = $('#menu');
   var menuBtns = $$('[data-menu]');
