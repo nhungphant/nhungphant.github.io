@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Growing a chat game on Google Play · Nhung Phan</title>
+<meta name="description" content="Wee Group case study: a chat game on Android, from the chat scripts and minigames to app store optimization and ads.">
+<meta name="theme-color" content="#0e0e0e">
+<link rel="canonical" href="https://nhungphant.github.io/projects/wee.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Growing a chat game on Google Play · Nhung Phan">
+<meta property="og:description" content="Wee Group case study: a chat game on Android, from the chat scripts and minigames to app store optimization and ads.">
+<meta property="og:url" content="https://nhungphant.github.io/projects/wee.html">
+<meta property="og:image" content="https://nhungphant.github.io/assets/img/brand/social-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nhung Phan, Product Manager: I make products the way I make gifts, with one specific person in mind.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/project.css">
+<script src="../assets/js/site.js" defer></script>
+</head>
+<body data-page="project" data-start="head">
+<div class="pg">
+
+<a class="skip" href="#main">Skip to content</a>
+<header class="top wrap">
+  <a class="n-signature" href="../index.html" aria-label="Nhung Phan, back to the home page"><span class="n-mark sig" aria-hidden="true"></span></a>
+  <div class="top__right">
+    <a class="n-btn n-btn--small hello" href="../index.html#hello" data-mail>Say hello</a>
+    <button class="tlink menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-menu><span class="n-scribble"><span data-menu-label>Menu</span><svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15 C 46 8, 98 5, 152 9 S 246 17, 296 7"></path></svg></span></button>
+  </div>
+</header>
+<button class="fab fab--off" type="button" aria-expanded="false" aria-controls="menu" data-menu><span data-menu-label>Menu</span></button>
+<div class="menu" id="menu" hidden>
+  <button class="scrim" type="button" aria-label="Close menu" data-menu-close></button>
+  <nav class="n-sheet sheet" aria-label="Menu">
+    <ol class="n-sheet__list"><li><a href="#outcome"><span class="n-label">01</span>Outcome</a></li><li><a href="#problem"><span class="n-label">02</span>The business problem</a></li><li><a href="#role"><span class="n-label">03</span>My role</a></li><li><a href="#solution"><span class="n-label">04</span>The solution</a></li><li><a href="#learned"><span class="n-label">05</span>What I learned</a></li></ol>
+    <a class="n-btn" href="../index.html#hello" data-mail style="justify-content: center">Say hello</a>
+  </nav>
+</div>
+<div class="idx-zone" aria-hidden="true"></div>
+<nav class="idx idx--off" aria-label="In this case study"><ol style="display: contents"><li style="display: contents"><a href="#outcome"><span class="n-label">01</span><span class="t">Outcome<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15 C 46 8, 98 5, 152 9 S 246 17, 296 7"></path></svg></span></a></li><li style="display: contents"><a href="#problem"><span class="n-label">02</span><span class="t">The business problem<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15 C 46 8, 98 5, 152 9 S 246 17, 296 7"></path></svg></span></a></li><li style="display: contents"><a href="#role"><span class="n-label">03</span><span class="t">My role<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15 C 46 8, 98 5, 152 9 S 246 17, 296 7"></path></svg></span></a></li><li style="display: contents"><a href="#solution"><span class="n-label">04</span><span class="t">The solution<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15 C 46 8, 98 5, 152 9 S 246 17, 296 7"></path></svg></span></a></li><li style="display: contents"><a href="#learned"><span class="n-label">05</span><span class="t">What I learned<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15 C 46 8, 98 5, 152 9 S 246 17, 296 7"></path></svg></span></a></li></ol></nav>
+<main class="wrap" id="main">
+  <header class="phead" id="head">
+    <span class="dd dd-star" aria-hidden="true" style="width: 56px; height: 56px; right: 6%; top: 72px; rotate: 12deg"></span>
+    <div class="phead__meta"><img src="../assets/img/icons/chat-game.webp" alt="" width="40" height="40"><span class="n-label">Wee Group</span></div>
+    <h1>Growing a <span class="n-scribble n-scribble--draw">chat<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15 C 46 8, 98 5, 152 9 S 246 17, 296 7"></path></svg></span> game on Google Play</h1>
+    <p class="phead__tag">A prank chat for fun.</p>
+    <div class="cover cover--wee" role="img" aria-label="Chats from the game: Mom, an old friend, a cute girl, a hacker and 911, each with two replies to pick">
+      <img class="glow" src="../assets/img/icons/chat-game.webp" alt="">
+      <div class="cols" aria-hidden="true"><div class="cols__c"><img src="../assets/img/screens/wee/911.webp" alt="" loading="lazy"><img src="../assets/img/screens/wee/ed.webp" alt="" loading="lazy"></div><div class="cols__c"><img src="../assets/img/screens/wee/mom.webp" alt="" loading="lazy"><img src="../assets/img/screens/wee/cute-girl.webp" alt="" loading="lazy"></div><div class="cols__c"><img src="../assets/img/screens/wee/hacker.webp" alt="" loading="lazy"><img src="../assets/img/screens/wee/911.webp" alt="" loading="lazy"></div><div class="cols__c"><img src="../assets/img/screens/wee/ed.webp" alt="" loading="lazy"><img src="../assets/img/screens/wee/mom.webp" alt="" loading="lazy"></div><div class="cols__c"><img src="../assets/img/screens/wee/cute-girl.webp" alt="" loading="lazy"><img src="../assets/img/screens/wee/hacker.webp" alt="" loading="lazy"></div></div>
+    </div>
+    <div class="intro">
+      <dl class="glance"><div><dt>Year</dt><dd>2022</dd></div><div><dt>Company</dt><dd>Wee Group</dd></div><div><dt>Role</dt><dd>Product Development &amp; Marketing Executive</dd></div><div><dt>Team</dt><dd>4 people</dd></div></dl>
+      <div class="sum">
+        <p>A chat game for Android where every level is a conversation and you pick the reply, truth or lie. I joined once it was built, to grow it: new minigame features on the product side, store and ads on the marketing side.</p>
+        <p class="getapp"><span class="n-label">Get the app</span><a class="tlink" href="https://play.google.com/store/apps/details?id=com.chat.master.prank.master.game" target="_blank" rel="noopener"><span class="n-scribble">Google Play<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15 C 46 8, 98 5, 152 9 S 246 17, 296 7"></path></svg></span> <span aria-hidden="true">↗</span></a></p>
+      </div>
+    </div>
+  </header>
+
+  <section class="blk" id="outcome">
+    <span class="dd dd-gift dd-mh" aria-hidden="true" style="width: 96px; height: 136px; right: 0; top: 96px; rotate: 8deg"></span>
+    <h2><span class="n-label">01</span>Outcome</h2>
+    <div>
+      <p class="txt">Players stay longer in the game, and within a week of launch it ranked top 5 in the USA and top 10 in Canada and Australia for a niche keyword, with ad campaigns that kept the cost per install low.</p>
+      <div class="stats">
+        <div class="stat"><span class="stat__n">+50%</span><span class="stat__l">time per active user (10 to 15 minutes)</span></div>
+        <div class="stat"><span class="stat__n">100K+</span><span class="stat__l">downloads, up from 50K+ after the first 3 months</span></div>
+        <div class="stat"><span class="stat__n">43%</span><span class="stat__l">of first-time users found it on their own (organic)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk" id="problem">
+    <span class="dd dd-chat" aria-hidden="true" style="width: 110px; height: 88px; right: 4%; top: 150px; rotate: -6deg"></span>
+    <h2><span class="n-label">02</span>The business problem</h2>
+    <div>
+      <p class="pull" style="margin-top: 0">The game was ready, but it needed more players, and players who stayed longer, on a tight budget.</p>
+      <p class="txt">Growth usually costs money, so every idea had to earn its place.</p>
+    </div>
+  </section>
+
+  <section class="blk" id="role">
+    <span class="dd dd-notebook dd-mh" aria-hidden="true" style="width: 120px; height: 100px; left: 2%; top: 260px; rotate: -8deg"></span>
+    <h2><span class="n-label">03</span>My role</h2>
+    <div>
+      <p class="txt">I joined after the game was built, to grow it, covering both product and marketing with my manager and a team of 4: 1 Product Designer, 2 Software Engineers and 1 QC Engineer.</p>
+      <ol class="rows">
+        <li><div><h3>Researched the market</h3><p>Studied competitor apps to find what to add next.</p></div></li>
+        <li><div><h3>Added the minigames</h3><p>Designed the minigames between levels and wrote the in-game chat scripts for them, then led engineering to build them.</p></div></li>
+        <li><div><h3>Ran growth</h3><p>App store optimization, creatives, copywriting and ad campaigns.</p></div></li>
+        <li><div><h3>Watched the numbers</h3><p>Tracked revenue and ad costs in reports.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="blk" id="solution">
+    <span class="dd dd-bulb" aria-hidden="true" style="width: 84px; height: 92px; left: 4%; top: 300px; rotate: -10deg"></span>
+    <h2><span class="n-label">04</span>The solution</h2>
+    <div>
+      <p class="txt">Three calls shaped it.</p>
+      <ol class="rows rows--big">
+        <li><div><h3>Add minigames between levels that take almost no effort to pass.</h3><p>Like scrolling a feed, there's always one more small thing to do, so players stay longer.</p></div></li>
+        <li><div><h3>Own the chat scripts.</h3><p>In a chat game, the script is the gameplay, so it needs one owner.</p></div></li>
+        <li><div><h3>Test keywords, creatives and ads, round after round.</h3><p>Studying competitor apps showed what worked, and trial and error did the rest.</p></div></li>
+      </ol>
+    </div>
+    <div class="full">
+      <div class="demo" data-demo="wee">
+        <div>
+          <h3 class="flow__t">Every level is a chat</h3>
+          <ol class="steps"><li><button type="button" aria-current="step" data-step="0" data-src="../assets/img/screens/wee/mom.webp" data-alt="Chat with Mom asking where you are, with a truth reply and a lie reply"><span class="n-label">01</span><span>Mom asks where you are. Tell the truth, or lie.</span><span class="bar" aria-hidden="true"><i></i></span></button></li><li><button type="button" data-step="1" data-src="../assets/img/screens/wee/ed.webp" data-alt="Chat with Ed, an old friend, who has a million dollar idea"><span class="n-label">02</span><span>Ed, an old friend, is looking for an investor for his million-dollar idea.</span><span class="bar" aria-hidden="true"><i></i></span></button></li><li><button type="button" data-step="2" data-src="../assets/img/screens/wee/cute-girl.webp" data-alt="Chat with a cute girl asking what you want"><span class="n-label">03</span><span>A cute girl asks what you want.</span><span class="bar" aria-hidden="true"><i></i></span></button></li><li><button type="button" data-step="3" data-src="../assets/img/screens/wee/hacker.webp" data-alt="Chat with a hacker asking for 100 dollars, with two lie replies"><span class="n-label">04</span><span>A hacker wants $100. Here, both replies are bluffs.</span><span class="bar" aria-hidden="true"><i></i></span></button></li><li><button type="button" data-step="4" data-src="../assets/img/screens/wee/911.webp" data-alt="Chat with 911 saying you are under arrest"><span class="n-label">05</span><span>911: "You are under arrest." What? Why?</span><span class="bar" aria-hidden="true"><i></i></span></button></li></ol>
+          <p class="demo__note">Plays on its own. Hover to pause, or pick a step.</p>
+        </div>
+        <div class="stage">
+          <div class="phone">
+            <img src="../assets/img/screens/wee/mom.webp" alt="Chat with Mom asking where you are, with a truth reply and a lie reply" data-shot>
+            <span class="tap tap--wee-0" aria-hidden="true" data-tap></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk" id="learned">
+    <span class="dd dd-pencil" aria-hidden="true" style="width: 100px; height: 104px; right: 6%; top: 100px; rotate: -6deg"></span>
+    <h2><span class="n-label">05</span>What I learned</h2>
+    <div>
+      <p class="pull pull--end" style="margin-top: 0">This was where I learned the whole product cycle, from build to grow. A feature only counts once people find it and keep playing, so product and marketing had to work as one job.</p>
+    </div>
+  </section>
+
+  <nav class="pn" aria-label="More case studies">
+    <a class="pn__a" href="edupia.html"><span class="n-label"><span class="n-arrow n-arrow--back" aria-hidden="true">←</span> Previous project</span><span class="pn__t">Kids try the app before parents buy</span><span class="pn__s">Let the lessons make the case.</span></a>
+    <a class="pn__a pn__a--next" href="bonbon-shop.html"><span class="n-label">Next project <span class="n-arrow n-arrow--fwd" aria-hidden="true">→</span></span><span class="pn__t">Shop owners pay their distributor by QR</span><span class="pn__s">Cash shouldn't take the scenic route.</span></a>
+  </nav>
+</main>
+
+<footer class="n-footer wrap foot" id="footer">
+  <div class="n-footer__top">
+    <div><span class="n-label">Find me elsewhere</span>
+      <ul class="n-footer__links">
+        <li><a class="n-textlink" href="https://www.linkedin.com/in/nhungphant/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></li>
+        <li><a class="n-textlink" href="https://github.com/nhungphant" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></li>
+        <li><a class="n-textlink" href="https://www.behance.net/nhungphant" target="_blank" rel="noopener">Behance <span aria-hidden="true">↗</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="n-footer__bottom"><span>© 2026 Nhung Phan. Made by hand, in plain HTML.</span><a class="n-textlink" href="#head" style="font-size: 14px">Back to top <span class="n-arrow n-arrow--up" aria-hidden="true">↑</span></a></div>
+</footer>
+
+</div>
+</body>
+</html>

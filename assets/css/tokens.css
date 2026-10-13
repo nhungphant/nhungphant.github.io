@@ -1,0 +1,115 @@
+/* Nhung Portfolio: colours, type, spacing */
+:root, [data-theme="ink"] {
+  --ink: #0e0e0e;
+  --surface: #171715;
+  --surface-raised: #1f1f1c;
+  --surface-glass: rgba(23, 23, 21, 0.86);
+  --hairline: #2c2c28;
+  --line: #6e6e66;
+  --paper: #f2f2ee;
+  --paper-soft: #c9c9c1;
+  --muted: #a3a39a;
+  --doodle: #e2d66f;
+  --doodle-wash: rgba(226, 214, 111, 0.10);
+  --on-doodle: var(--ink);
+  --on-tint: var(--ink);
+  --on-tint-soft: #3b3b36;
+  --tint-chip: rgba(14, 14, 14, 0.08);
+  --tint-bonbon: #a4c9e9;
+  --tint-bonbon-hover: #b8d7f2;
+  --tint-momo: #e3b5ca;
+  --tint-momo-hover: #edc6d7;
+  --tint-edupia: #96d1d0;
+  --tint-edupia-hover: #addddd;
+  --tint-wee: #e5baa2;
+  --tint-wee-hover: #efcab6;
+}
+:root {
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+  --space-128: 128px;
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  --duration-quick: 180ms;
+  --duration-reveal: 600ms;
+  --duration-draw: 1100ms;
+  --ease-craft: cubic-bezier(0.22, 1, 0.36, 1);
+  --layout-max: 1180px;
+  --layout-measure: 660px;
+  --layout-topbar: 64px;
+  --font-display: "Bricolage Grotesque", "Be Vietnam Pro", system-ui, sans-serif;
+  --font-text: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --text-hero: 600 88px/0.95 var(--font-display);
+  --text-heading: 600 64px/1 var(--font-display);
+  --text-title: 600 32px/1.15 var(--font-display);
+  --text-quote: 400 28px/1.3 var(--font-display);
+  --text-lead: 400 20px/1.55 var(--font-text);
+  --text-body: 400 17px/1.65 var(--font-text);
+  --text-small: 400 14px/1.5 var(--font-text);
+  --text-label: 600 12px/16px var(--font-text);
+}
+.hero {
+  font-family: var(--font-display);
+  font-size: 88px;
+  line-height: 0.95;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+.heading {
+  font-family: var(--font-display);
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+.title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.quote {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1.3;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.lead {
+  font-family: var(--font-text);
+  font-size: 20px;
+  line-height: 1.55;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.body {
+  font-family: var(--font-text);
+  font-size: 17px;
+  line-height: 1.65;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.small {
+  font-family: var(--font-text);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.label {
+  font-family: var(--font-text);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
