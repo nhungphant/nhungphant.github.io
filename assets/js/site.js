@@ -49,7 +49,11 @@
     menu.hidden = !open;
     menuBtns.forEach(function (b) { b.setAttribute('aria-expanded', open ? 'true' : 'false'); });
     $$('[data-menu-label]').forEach(function (l) { l.textContent = open ? 'Close' : 'Menu'; });
-    if (open) { fab && fab.classList.remove('fab--off'); var first = $('a', menu); first && first.focus(); }
+    if (open) {
+      // The floating Menu/Close only shows when the header's own button has scrolled out of view, so there is never two
+      var hb = $('.top .menu-btn');
+      if (fab && !(hb && hb.getBoundingClientRect().bottom > 0)) fab.classList.remove('fab--off');
+      var sh = $('.sheet', menu); sh && sh.focus({ preventScroll: true }); }
     else scrollWork();
   }
   menuBtns.forEach(function (b) { b.addEventListener('click', function () { setMenu(menu.hidden); }); });
@@ -57,6 +61,19 @@
     $$('[data-menu-close], a', menu).forEach(function (el) { el.addEventListener('click', function () { setMenu(false); }); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { setMenu(false); menuBtns[0] && menuBtns[0].focus(); } });
   }
+
+  /* ---- Phone menu: the current section is marked like the side index, with the hand-drawn underline.
+     Opening the menu moves focus to the sheet itself, so no link shows a focus ring until you use the keyboard. */
+  var sheetLinks = menu ? $$('.n-sheet__list a', menu) : [];
+  var sheetEl = menu && $('.sheet', menu);
+  if (sheetEl) sheetEl.setAttribute('tabindex', '-1');
+  sheetLinks.forEach(function (a) {
+    var txt = a.lastChild;
+    if (!txt || txt.nodeType !== 3) return;
+    var t = document.createElement('span'); t.className = 't'; t.textContent = txt.textContent;
+    t.insertAdjacentHTML('beforeend', '<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15 C 46 8, 98 5, 152 9 S 246 17, 296 7"></path></svg>');
+    a.replaceChild(t, txt);
+  });
 
   /* ---- Scroll: floating Menu word, side index, About story */
   var fab = $('.fab');
@@ -94,6 +111,7 @@
       if (cur !== current) {
         current = cur;
         idxLinks.forEach(function (a, i) { if (i === cur) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+        sheetLinks.forEach(function (a) { if (a.getAttribute('href') === '#' + ids[cur]) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
       }
       if (zoneOk) showIdx();
       else { clearTimeout(idxTimer); idx.classList.add('idx--off'); idx.classList.remove('idx--full'); }

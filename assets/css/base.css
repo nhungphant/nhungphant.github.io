@@ -354,7 +354,14 @@ a:hover .n-arrow--up { transform: translateY(-3px); }
   font: 600 30px/1.15 var(--font-display); letter-spacing: -0.015em; color: var(--paper); text-decoration: none;
 }
 .n-sheet__list a .n-label { font-size: 12px; }
-.n-sheet__list a:hover, .n-sheet__list a[aria-current] { color: var(--doodle); }
+.n-sheet__list a:hover, .n-sheet__list a[aria-current], .n-sheet__list a:focus-visible { color: var(--doodle); }
+/* Current section and keyboard focus: the hand-drawn underline under the name, like the side index (no outline) */
+.n-sheet__list a:focus-visible{outline:none}
+.n-sheet__list a .t{position:relative;display:inline-block}
+.n-sheet__list a .t svg{position:absolute;left:-2px;bottom:-8px;width:calc(100% + 4px);height:12px;overflow:visible}
+.n-sheet__list a .t path{fill:none;stroke:var(--doodle);stroke-width:3.5;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset var(--duration-draw) var(--ease-craft)}
+.n-sheet__list a[aria-current] .t path,.n-sheet__list a:focus-visible .t path{stroke-dashoffset:0}
+.sheet:focus{outline:none}
 
 /* ---------- 404 ---------- */
 .n-404 { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-24); padding-block: var(--space-64); }
@@ -454,7 +461,6 @@ img,svg{-webkit-user-drag:none;-webkit-touch-callout:none;user-select:none}
  .wrap{padding-inline:var(--space-16)}
  .sec{padding-top:var(--space-96)}
  .sec-head{margin-bottom:var(--space-40,40px)}
- .top__right .hello{display:none}
 }
 
 /* ---- Site additions ---- */
@@ -467,7 +473,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--doodle);outline-off
 /* Page loader: the page's doodle is uncovered left to right (as if drawn), its line rises in, and the hand-drawn underline follows.
    Only transform and opacity move, so it stays smooth while the page loads. Leaving a page just fades to ink: one drawing per visit.
    Clears itself after 3s if the script fails; off under reduced motion. */
-.ld{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:var(--ink);pointer-events:none;transition:opacity .45s var(--ease-craft),visibility 0s linear .45s;animation:ld-auto .45s var(--ease-craft) 3s forwards}
+.ld{position:fixed;top:0;right:0;bottom:0;left:0;width:100%;height:100%;z-index:1000;display:flex;align-items:center;justify-content:center;background:var(--ink);pointer-events:none;transition:opacity .45s var(--ease-craft),visibility 0s linear .45s;animation:ld-auto .45s var(--ease-craft) 3s forwards}
 .ld__in{display:flex;flex-direction:column;align-items:center;gap:20px;padding:0 24px;text-align:center}
 .ld__draw{position:relative;display:block;overflow:hidden}
 .ld__draw::after{content:"";position:absolute;inset:-2px;background:var(--ink);will-change:transform;animation:ld-uncover .8s var(--ease-craft) .1s forwards}
